@@ -6,13 +6,40 @@ body {
   min-height: 100px;
 }
 
+.header {
+  text-align: center;
+  font-size: 40px;
+  background-color: #2C73D2;
+  padding: 20px;
+}
+
+.container {
+  background-color: #0089BA;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
 #container {
-  width: 700px;
-  height: 700px;
+  width: 500px;
+  height: 500px;
   display: flex;
   flex-wrap: wrap;
-  border-color: blue;
+  border-color: #845EC2;
   border-style: solid;
+  background-color: white;
+}
+
+.midContent {
+  background-color: #008E9B;
+  padding: 10px;
+}
+
+.line1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 
 .square {
@@ -20,4 +47,9 @@ body {
   border-style: solid;
 }
 
-
+.footer {
+  display: flex;
+  background-color: #008F7A;
+  padding-top: 20px;
+  justify-content: flex-end;
+}

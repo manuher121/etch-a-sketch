@@ -23,15 +23,36 @@ function getSquarePerLine() {
 }
 
 function getSquareSize(n) {
-    return (700/n)-3;
+    return (500/n)-3;
 }
 
 function getSquareAmount(n) {
     return (n*n);
 }
 
-const element = document.getElementById("myBtn");
-element.addEventListener("click", getSquarePerLine);
+const buttonReset = document.getElementById("reset");
+buttonReset.addEventListener("click", getSquarePerLine);
+
+const buttonBlack = document.getElementById("black");
+buttonBlack.addEventListener("click", black);
+
+const buttonRandom = document.getElementById("random");
+buttonRandom.addEventListener("click", random);
+
+const buttonGradient = document.getElementById("gradient");
+buttonGradient.addEventListener("click", gradient);
+
+function black() {
+    setColor("black");
+}
+
+function random() {
+    setColor("random");
+}
+
+function gradient() {
+    setColor("gradient");
+}
 
 function createNewSquares(number) { 
     for(x=0; x<getSquareAmount(number);x++) {
@@ -40,8 +61,8 @@ function createNewSquares(number) {
         board.style.flexBasis = getSquareSize(number)+"px";
 
         document.getElementById('container').appendChild(board);
+        setColor("black");
 }
-    setColor("rainbo");
 }
 
 function gradientColor () {
@@ -70,7 +91,7 @@ function setColor(color) {
       divs[i].addEventListener("mouseover", function (e) {
         if (color == "gradient") {
           e.target.style.backgroundColor = gradientColor();
-        } else if (color == "rainbow") {
+        } else if (color == "random") {
           e.target.style.backgroundColor = `rgb(${randomColor()} ,${randomColor()} ,${randomColor()})`;
         } else {
           e.target.style.backgroundColor = "black";
